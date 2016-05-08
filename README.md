@@ -11,7 +11,7 @@ To use this library in your android project, just simply add the following depen
 
 ```
 dependencies {
-    compile 'com.github.azygous13:version-monitor:0.1.0'
+    compile 'com.github.azygous13:version-monitor:0.2.0'
 }
 ```
 
