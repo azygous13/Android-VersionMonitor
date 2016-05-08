@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.view.ContextThemeWrapper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -106,7 +107,7 @@ public class VersionMonitor {
         return 0;
     }
 
-    protected String getCurrentVersion(String packageName) {
+    private String getCurrentVersion(String packageName) {
         String currentVersion = "";
         try {
             currentVersion = context.getPackageManager().getPackageInfo(packageName, 0).versionName;
@@ -144,7 +145,7 @@ public class VersionMonitor {
     }
 
     private void showDialog(String whatNew) {
-        new AlertDialog.Builder(context)
+        new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.VersionMonitorStyle))
                 .setTitle(R.string.vm_dialog_title)
                 .setMessage(whatNew)
                 .setNegativeButton(R.string.vm_later, new DialogInterface.OnClickListener() {
