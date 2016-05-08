@@ -88,12 +88,6 @@ public class VersionMonitorTest {
         float patchVersion = versionMonitor.getPatchVersion("1");
         assertThat(patchVersion, is(0f));
     }
-    
-    @Test
-    public void testGetCurrentVersion() {
-        String version = versionMonitor.getCurrentVersion("com.github.azygous13.versionmonitor");
-        assertThat(version, is("1.0"));
-    }
 
     @Test
     public void testIsNewVersion_bothNoPatch() {
