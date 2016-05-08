@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'version-monitor'
+
+    publishedGroupId = 'com.github.azygous13'
+    libraryName = 'Android-VersionMonitor'
+    artifact = 'version-monitor'
+
+    libraryDescription = 'Checking new version available from Google Play Store'
+
+    siteUrl = 'https://github.com/azygous13/Android-VersionMonitor'
+    gitUrl = 'https://github.com/azygous13/Android-VersionMonitor.git'
+
+    libraryVersion = '0.2.0'
+
+    developerId = 'azygous13'
+    developerName = 'Teerapong Chantakard'
+    developerEmail = 'azygous13@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
