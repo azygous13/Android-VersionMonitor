@@ -20,7 +20,7 @@ public class VersionMonitorTest {
 
     @Before
     public void setUp() {
-        versionMonitor = new VersionMonitor(InstrumentationRegistry.getContext());
+        versionMonitor = VersionMonitor.init(InstrumentationRegistry.getContext());
     }
 
     @Test
