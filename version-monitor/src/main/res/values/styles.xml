@@ -4,7 +4,7 @@
     <style name="VersionMonitorStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:background">@android:color/white</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="colorAccent">#009688</item>
     </style>
     
 </resources>
