@@ -1,6 +1,5 @@
 package com.github.azygous13.versionmonitor;
 
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,7 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.view.ContextThemeWrapper;
+import android.support.v7.app.AlertDialog;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -145,7 +144,7 @@ public class VersionMonitor {
     }
 
     private void showDialog(String whatNew) {
-        new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.VersionMonitorStyle))
+        new AlertDialog.Builder(context, R.style.VersionMonitorStyle)
                 .setTitle(R.string.vm_dialog_title)
                 .setMessage(whatNew)
                 .setNegativeButton(R.string.vm_later, new DialogInterface.OnClickListener() {
@@ -166,11 +165,11 @@ public class VersionMonitor {
     }
 
     private void openPlayStore() {
-        Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+        Uri uri = Uri.parse("market://details?id=" + packageName);
         try {
             context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
         } catch (ActivityNotFoundException e) {
-            uri = Uri.parse(PLAY_STORE_URL + context.getPackageName());
+            uri = Uri.parse(PLAY_STORE_URL + packageName);
             context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
         }
     }
